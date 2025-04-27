@@ -70,7 +70,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="LJp-vt-eXb" kind="show" identifier="tasksSegue" id="hoj-In-puM"/>
+                                                    <action selector="loginTapConnect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WhL-au-0x4"/>
+                                                    <segue destination="LJp-vt-eXb" kind="show" identifier="tasksSegue" id="adH-HS-eQ5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6j-sd-L9Q">
@@ -82,6 +83,9 @@
                                                 <state key="normal" title="Register">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="registerTapConnect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OdI-UK-oHh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -109,6 +113,11 @@
                             <constraint firstItem="Jhd-8F-Ryb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="pC5-of-ZWE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTF" destination="NtY-ks-aSO" id="HQC-04-2ZA"/>
+                        <outlet property="passwordTF" destination="89P-Jv-jc1" id="uRM-fz-3sm"/>
+                        <outlet property="warnLabel" destination="OVg-Pt-uXV" id="7GF-zB-raC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,6 +150,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
+                                    <outlet property="dataSource" destination="mDZ-RN-5GB" id="Sjv-nd-e6s"/>
                                     <outlet property="delegate" destination="AF6-OL-c8Q" id="jfG-dB-ms0"/>
                                 </connections>
                             </tableView>
@@ -157,8 +167,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="AF6-OL-c8Q">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yh1-3i-884"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yh1-3i-884">
+                            <connections>
+                                <action selector="addTapped:" destination="mDZ-RN-5GB" id="5IB-rb-Of8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="pac-Im-Ifv" id="tfF-6V-aR2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3XX-Ui-sH9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
